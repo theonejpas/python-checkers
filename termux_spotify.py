@@ -108,7 +108,7 @@ class post(object):
 					
 					source = req.post("https://accounts.spotify.com/api/login", data=param,cookies=cookies)	
 					nuebo = req.post("https://www.spotify.com/do/account/overview/",cookies=cookies)
-					soup2 = BeautifulSoup(nuebo.text,"lxml")
+					soup2 = BeautifulSoup(nuebo.text,"html")
 					capture = soup2.find("h3",{"class":"product-name"})
 				except:
 					
